@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="TechnicalTest.Application/TechnicalTest.Application.csproj" />
+    <Project Path="TechnicalTest.Domain/TechnicalTest.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="TechnicalTest.Persistence/TechnicalTest.Data.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="TechnicalTest.API/TechnicalTest.API.csproj" Id="06d21358-c88e-46cd-8a57-35722f5fc949" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Folder Name="/Test/">
+    <Project Path="TechnicalTest.Test/TechnicalTest.Test.csproj" Id="796c7adf-0a57-4ef2-8fea-6bd15c821f2d" />
+  </Folder>
+</Solution>

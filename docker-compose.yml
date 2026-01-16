@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: TechnicalTest.API/Dockerfile
+    container_name: technicaltest_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=technicaltest;Username=postgres;Password=postgres"
+
+  postgres:
+    image: postgres:15
+    container_name: technicaltest_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: technicaltest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
