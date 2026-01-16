@@ -9,8 +9,6 @@ using TechnicalTest.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var key = "qwertyuiopasdfghjklzxcvbnm123456";
-
 builder.Services.ConfigureDataApp(builder.Configuration);
 builder.Services.ConfigureApplicationApp();
 builder.Services.AddControllers();
@@ -60,7 +58,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(key)
+                Encoding.UTF8.GetBytes(builder.Configuration[key]!)
             ),
             ValidateIssuer = false,
             ValidateAudience = false
