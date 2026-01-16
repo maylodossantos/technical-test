@@ -19,14 +19,9 @@ namespace TechnicalTest.Data
         public static void ConfigureDataApp(this IServiceCollection services,
                 IConfiguration configuration)
         {
-
-            var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION")
-                                   ?? configuration.GetConnectionString("DefaultConnection")
-                                   ?? "Host=localhost;Port=5432;Database=technicaltest;Username=postgres;Password=postgres";
-
-            services.AddDbContext<AppDbContext>(opt =>
-                opt.UseNpgsql(connectionString, b => b.MigrationsAssembly("TechnicalTest.Data"))
-            );
+           services.AddDbContext<AppDbContext>(opt => 
+                    opt.UseNpgsql(configuration.GetConnectionString("DefaultConnection"), 
+                    b => b.MigrationsAssembly("TechnicalTest.Data")));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserRepository, UserRepository>();
