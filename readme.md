@@ -13,7 +13,7 @@ cd meu-projeto
 git init
 
 # Clonar o repositório
-git clone https://github.com/seu-usuario/technicaltest.git
+git clone https://github.com/maylodossantos/technical-test.git
 ```
 Importante: Para facilitar o desenvolvimento local, as variáveis de ambiente já estão pré-configuradas com valores padrão. Não é necessário configurar manualmente.
 
