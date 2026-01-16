@@ -9,6 +9,8 @@ using TechnicalTest.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var key = "qwertyuiopasdfghjklzxcvbnm123456";
+
 builder.Services.ConfigureDataApp(builder.Configuration);
 builder.Services.ConfigureApplicationApp();
 builder.Services.AddControllers();
